@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,17 @@ export class BikeService {
 
   getBikes() {
   return this.http.get('/server/api/v1/bikes');
+  }
+
+  getBike(id: number){
+    return this.http.get('/server/api/vi/bikes/' + id);
+
+  }
+
+  createBikeRegistration(bike){
+    const body = JSON.stringify(bike);
+    return this.http.post('/server/api/v1/bikes', body, httpOptions);
+
   }
 
 }
