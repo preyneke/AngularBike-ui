@@ -14,7 +14,7 @@ import { BikeService } from '../../services/bike.service';
     </tr>
     <tr *ngFor="let bike of bikes">
       <td>
-        {{bike.name}}
+        <a [routerLink]="['/admin/view/', bike.id]">{{bike.name}}</a>
       </td>
       <td>
         {{bike.email}}

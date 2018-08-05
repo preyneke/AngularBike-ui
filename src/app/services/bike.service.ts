@@ -18,7 +18,7 @@ export class BikeService {
   }
 
   getBike(id: number){
-    return this.http.get('/server/api/vi/bikes/' + id);
+    return this.http.get('/server/api/v1/bikes/' + id);
 
   }
 
